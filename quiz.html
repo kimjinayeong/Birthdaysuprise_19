@@ -81,3 +81,201 @@ document.getElementById("msg").innerHTML="❌ Oops! Try again ❤️";
 
 </body>
   </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billi Quiz ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#000000,#434343);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.container{
+width:90%;
+max-width:500px;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(10px);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+#question{
+font-size:24px;
+margin-bottom:25px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin:8px 0;
+font-size:18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+background:white;
+color:black;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+#message{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#ffd700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>💖 Let's See How Well You Know Yourself 💖</h2>
+
+<div id="question"></div>
+
+<div id="options"></div>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+const quiz=[
+
+{
+question:"🖤 What's your favourite colour?",
+options:["Black","Pink","Blue","White"],
+answer:"Black"
+},
+
+{
+question:"🍛 What's your favourite food?",
+options:["Burger","Paneer Ki Sabji","Pizza","Momos"],
+answer:"Paneer Ki Sabji"
+},
+
+{
+question:"🕌 What's your favourite place?",
+options:["Delhi","Paris","Makkah & Madinah","Dubai"],
+answer:"Makkah & Madinah"
+},
+
+{
+question:"🍫 What's your favourite sweet?",
+options:["KitKat","Dairy Milk","Laddu","Ice Cream"],
+answer:"Dairy Milk"
+},
+
+{
+question:"🌧️ What's your favourite weather?",
+options:["Summer","Winter","Rain","Spring"],
+answer:"Rain"
+},
+
+{
+question:"📖 What's your favourite book?",
+options:["Harry Potter","Quran","Novel","Magazine"],
+answer:"Quran"
+},
+
+{
+question:"🚙 What's your favourite car?",
+options:["BMW","Thar","Audi","Fortuner"],
+answer:"Thar"
+},
+
+{
+question:"✈️ What's your dream?",
+options:["Doctor","Teacher","Air Hostess","Engineer"],
+answer:"Air Hostess"
+}
+
+];
+
+let current=0;
+
+const question=document.getElementById("question");
+const options=document.getElementById("options");
+const message=document.getElementById("message");
+  function loadQuestion(){
+
+message.innerHTML="";
+
+question.innerHTML=quiz[current].question;
+
+options.innerHTML="";
+
+quiz[current].options.forEach(function(option){
+
+let btn=document.createElement("button");
+
+btn.innerHTML=option;
+
+btn.onclick=function(){
+
+if(option===quiz[current].answer){
+
+message.innerHTML="✅ Correct ❤️";
+
+setTimeout(function(){
+
+current++;
+
+if(current<quiz.length){
+
+loadQuestion();
+
+}else{
+
+window.location.href="gallery.html";
+
+}
+
+},1000);
+
+}else{
+
+message.innerHTML="❌ Oops! Try Again ❤️";
+
+}
+
+};
+
+options.appendChild(btn);
+
+});
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
