@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Date ❤️</title>
 
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#6a11cb,#2575fc);
+color:white;
+text-align:center;
+}
+
+.box{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+width:90%;
+max-width:450px;
+backdrop-filter:blur(10px);
+}
+
+input{
+width:90%;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+margin-top:20px;
+}
+
+button{
+margin-top:20px;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#2575fc;
+cursor:pointer;
+}
+
+#error{
+color:yellow;
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>❤️ Enter Our Friendship Anniversary ❤️</h2>
+
+<p>Hint: DD/MM/YYYY</p>
+
+<input type="text" id="date" placeholder="22/08/2022">
+
+<br>
+
+<button onclick="checkDate()">Continue</button>
+
+<p id="error"></p>
+
+</div>
+
+<script>
+function checkDate(){
+let answer=document.getElementById("date").value.trim();
+
+if(answer==="22/08/2022"){
+window.location.href="quiz.html";
+}else{
+document.getElementById("error").innerHTML="❌ Oops! That's not our special date. Try again ❤️";
+}
+}
+</script>
+
+</body>
+  </html>
