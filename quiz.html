@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Well Do You Know Yourself?</title>
 
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#1a1a1a,#444);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+.box{
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:500px;
+}
+
+button{
+display:block;
+width:100%;
+margin:10px 0;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.correct{
+background:#4CAF50;
+color:white;
+}
+
+.wrong{
+background:#ff4d4d;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>🖤 First Question 🖤</h2>
+
+<h3>What's Billi's favourite colour?</h3>
+
+<button onclick="wrong()">Pink</button>
+<button onclick="correct()">Black</button>
+<button onclick="wrong()">Blue</button>
+<button onclick="wrong()">White</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+function correct(){
+document.getElementById("msg").innerHTML="🎉 Correct! You know yourself so well ❤️";
+
+setTimeout(function(){
+window.location.href="food.html";
+},2000);
+}
+
+function wrong(){
+document.getElementById("msg").innerHTML="❌ Oops! Try again ❤️";
+}
+</script>
+
+</body>
+  </html>
