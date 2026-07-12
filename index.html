@@ -1,1 +1,44 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday</title>
+<style>
+body{
+margin:0;
+background:linear-gradient(135deg,#ff69b4,#ffb6c1,#ffd700);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial,sans-serif;
+text-align:center;
+color:white;
+}
+h1{
+font-size:50px;
+animation:glow 2s infinite alternate;
+}
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff1493;
+cursor:pointer;
+}
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 30px yellow;}
+}
+</style>
+</head>
+<body>
+<div>
+<h1>🎂 Happy Birthday ❤️</h1>
+<h2>Your Name Here</h2>
+<p>This is only the beginning of your surprise...</p>
+<button onclick="alert('Next page coming soon!')">Continue ➜</button>
+</div>
+</body>
+</html>
